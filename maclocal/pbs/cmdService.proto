@@ -1,0 +1,31 @@
+syntax = "proto3";
+
+package pbs;
+option go_package = ".;pbs";
+
+service CmdService {
+    rpc ShowWallet (EmptyRequest) returns (CommonResponse) {}
+    rpc StartVpn (VpnSrvParam) returns (CommonResponse) {}
+    rpc StopVpn (EmptyRequest) returns (CommonResponse) {}
+}
+
+message EmptyRequest {
+}
+
+message CommonResponse {
+    string msg = 1;
+}
+
+message LogLevel{
+    string Module = 1;
+    int32  Level  = 2;
+}
+
+message Address{
+    string address = 1;
+}
+
+message VpnSrvParam {
+    string pool = 1;
+    string miner = 2;
+}
