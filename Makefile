@@ -15,15 +15,13 @@ test:
 m:
 	CGO_CFLAGS=-mmacosx-version-min=10.11 \
 	CGO_LDFLAGS=-mmacosx-version-min=10.11 \
-	GOARCH=amd64 GOOS=darwin go build  --buildmode=c-archive -o $(BINDIR)/dss.a mac/*.go
+	GOARCH=amd64 GOOS=darwin go build  --buildmode=c-archive -o $(BINDIR)/simple.a mac/*.go
 	cp mac/callback.h $(BINDIR)/
 a:
-	 gomobile bind -v -o $(BINDIR)/dss.aar -target=android -ldflags=-s github.com/redeslab/simple-go/android
+	 gomobile bind -v -o $(BINDIR)/simple.aar -target=android -ldflags=-s github.com/redeslab/simple-go/android
 i:
 	go env -w GOFLAGS=-mod=mod
-	gomobile bind -v -o $(BINDIR)/iosLib.xcframework -target=ios  -ldflags="-w" -ldflags=-s github.com/redeslab/simple-go/ios
-	cp -rf bin/iosLib.xcframework $(tp)
-	rm -rf bin/iosLib.xcframework
+	gomobile bind -v -o $(BINDIR)/simple.xcframework -target=ios  -ldflags="-w" -ldflags=-s github.com/redeslab/simple-go/ios
 
 clean:
 	gomobile clean
