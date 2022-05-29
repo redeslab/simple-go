@@ -18,10 +18,10 @@ m:
 	GOARCH=amd64 GOOS=darwin go build  --buildmode=c-archive -o $(BINDIR)/dss.a mac/*.go
 	cp mac/callback.h $(BINDIR)/
 a:
-	 gomobile bind -v -o $(BINDIR)/dss.aar -target=android -ldflags=-s github.com/redeslab/go-lib/android
+	 gomobile bind -v -o $(BINDIR)/dss.aar -target=android -ldflags=-s github.com/redeslab/simple-go/android
 i:
 	go env -w GOFLAGS=-mod=mod
-	gomobile bind -v -o $(BINDIR)/iosLib.xcframework -target=ios  -ldflags="-w" -ldflags=-s github.com/redeslab/go-lib/ios
+	gomobile bind -v -o $(BINDIR)/iosLib.xcframework -target=ios  -ldflags="-w" -ldflags=-s github.com/redeslab/simple-go/ios
 	cp -rf bin/iosLib.xcframework $(tp)
 	rm -rf bin/iosLib.xcframework
 
