@@ -6,6 +6,7 @@ require (
 	github.com/ethereum/go-ethereum v1.10.13
 	github.com/golang/protobuf v1.5.2
 	github.com/google/gopacket v1.1.19
+	github.com/redeslab/go-simple v1.0.2
 	github.com/spf13/cobra v1.3.0
 	google.golang.org/grpc v1.43.0
 	google.golang.org/protobuf v1.27.1
@@ -24,11 +25,6 @@ require (
 	github.com/gorilla/websocket v1.4.2 // indirect
 	github.com/inconshreveable/mousetrap v1.0.0 // indirect
 	github.com/op/go-logging v0.0.0-20160315200505-970db520ece7 // indirect
-	github.com/redeslab/BAS v1.3.0 // indirect
-	github.com/redeslab/go-miner v1.2.9 // indirect
-	github.com/redeslab/go-miner-pool v1.3.4 // indirect
-	github.com/redeslab/go-simple v1.0.2 // indirect
-	github.com/redeslab/pirate_contract v1.3.1 // indirect
 	github.com/rjeczalik/notify v0.9.1 // indirect
 	github.com/shirou/gopsutil v3.21.4-0.20210419000835-c7a38de76ee5+incompatible // indirect
 	github.com/spf13/pflag v1.0.5 // indirect

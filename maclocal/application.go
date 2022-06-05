@@ -3,7 +3,7 @@ package main
 import "C"
 import (
 	"fmt"
-	"github.com/redeslab/go-simple/proxy"
+	"github.com/redeslab/simple-go/proxy"
 )
 
 const (

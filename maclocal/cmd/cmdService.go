@@ -3,7 +3,7 @@ package command
 import (
 	"context"
 	"fmt"
-	"github.com/redeslab/go-simple/maclocal/pbs"
+	"github.com/redeslab/simple-go/maclocal/pbs"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/reflection"
 	"net"
