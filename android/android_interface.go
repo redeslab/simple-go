@@ -3,11 +3,11 @@ package androidLib
 import (
 	"encoding/json"
 	"fmt"
-	"github.com/redeslab/go-lib/proxy"
-	"github.com/redeslab/go-lib/tun2Pipe"
 	"github.com/redeslab/go-simple/account"
 	"github.com/redeslab/go-simple/network"
 	"github.com/redeslab/go-simple/node"
+	"github.com/redeslab/go-simple/proxy"
+	"github.com/redeslab/go-simple/tun2Pipe"
 	"github.com/redeslab/go-simple/util"
 	"io"
 	"io/ioutil"
@@ -52,14 +52,17 @@ func InitSystem(bypassIPs, baseDir string) error {
 }
 func waitVpnStatus(signal chan struct{}) {
 	<-signal
-	_appInst.vpnDelegate.VpnClosed()
+	if _appInst.vpnDelegate != nil {
+		_appInst.vpnDelegate.VpnClosed()
+		_appInst.vpnDelegate = nil
+	}
+
 	if VpnInst != nil {
 		VpnInst.Stop()
 	}
 	if TunInst != nil {
 		TunInst.Finish()
 	}
-	_appInst.vpnDelegate = nil
 }
 
 func StartVPN(srvAddr, minerAddr string, d VpnDelegate) error {

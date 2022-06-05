@@ -3,8 +3,8 @@ package main
 import (
 	"context"
 	"fmt"
-	cmd "github.com/redeslab/go-lib/maclocal/cmd"
-	"github.com/redeslab/go-lib/maclocal/pbs"
+	cmd "github.com/redeslab/go-simple/maclocal/cmd"
+	"github.com/redeslab/go-simple/maclocal/pbs"
 	"github.com/spf13/cobra"
 	"io/ioutil"
 	"os"

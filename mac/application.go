@@ -6,7 +6,7 @@ package main
 import "C"
 import (
 	"fmt"
-	"github.com/redeslab/go-lib/proxy"
+	"github.com/redeslab/go-simple/proxy"
 )
 
 const (
